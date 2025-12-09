@@ -79,7 +79,7 @@ mongodb://localhost:27018
 2. Click **Import**
 3. Choose:
    ```
-   postman/senior-mern-task.postman_collection.json
+   postman/MERN Task API.postman_collection.json
    ```
 4. The collection will be added under your workspace.
 
