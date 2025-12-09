@@ -1,0 +1,26 @@
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: uves-mern-task-image
+    container_name: uves-mern-task-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env.docker
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    container_name: uves-mern-task-mongo
+    restart: unless-stopped
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
